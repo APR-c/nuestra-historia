@@ -1727,7 +1727,9 @@
 
       // Reinicia iframe de vídeo al cerrar
       if (modal === videoModal && surpriseVideo) {
-        pauseMusic();
+        if (musicPlaying) {
+          pauseMusic();
+        }
         const currentSrc = surpriseVideo.src;
         surpriseVideo.src = "";
         setTimeout(() => {
