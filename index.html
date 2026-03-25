@@ -1520,13 +1520,6 @@
 
         <!-- EDITAR TEXTO -->
         <p>
-          Gracias por cada momento, por cada gesto, por la ternura, por la risa,
-          por la calma, por lo bonito de lo cotidiano y por todo lo extraordinario
-          que nace simplemente de estar juntos.
-        </p>
-
-        <!-- EDITAR TEXTO -->
-        <p>
           Ojalá seguir escribiendo muchos capítulos más contigo.
           Ojalá seguir eligiéndonos. Ojalá seguir llamando hogar
           a esa sensación tan especial que aparece cuando estamos el uno con el otro.
@@ -1549,27 +1542,7 @@
   <div class="modal" id="videoModal" aria-hidden="true">
     <div class="video-wrapper">
       <button class="close-btn" data-close-modal="videoModal" aria-label="Cerrar">×</button>
-
-      <!--
-        EDITAR SORPRESA VÍDEO · OPCIÓN 1 (RECOMENDADA):
-        Pega aquí el enlace embed de YouTube/Vimeo dentro del iframe.
-
-        EJEMPLO YOUTUBE:
-        src="https://www.youtube.com/embed/TU_VIDEO?autoplay=1"
-
-        Si prefieres vídeo local, comenta el iframe y usa la etiqueta <video>.
-      -->
-      <!-- <iframe
-        id="surpriseVideo"
-        src=""
-        title="Vídeo sorpresa"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen
-      ></iframe>-->
-
-      <!--
-      OPCIÓN 2: VÍDEO LOCAL
-        -->
+      
       <video controls autoplay>
         <source src="videos/video_aniversario.mp4" type="video/mp4">
       </video>
@@ -1754,6 +1727,7 @@
 
       // Reinicia iframe de vídeo al cerrar
       if (modal === videoModal && surpriseVideo) {
+        pauseMusic();
         const currentSrc = surpriseVideo.src;
         surpriseVideo.src = "";
         setTimeout(() => {
